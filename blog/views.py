@@ -21,7 +21,7 @@ def candidate(request, pk):
     data = Candidate.objects.filter(slug=job_obj.slug)
 
     if len_job_skills == 0:
-        best_candidate = Candidate.objects.all()
+        best_candidate = list(data)
     else:
         for candidate in data:
             counter = 0
