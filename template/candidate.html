@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+<ul>
+    Candidates: <br><br>
+    {% for candidate in candidates %}
+        <li>{{ candidate.title }}</li>
+        {% for skill in candidate.skill.all %}
+            {{ skill }}<br>
+        {% endfor %}
+        <br><br>
+    {% endfor %}
+</ul>
+</main>
+
+{% endblock content %}
